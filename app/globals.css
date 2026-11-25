@@ -1,26 +1,261 @@
 @import "tailwindcss";
 
+/* ===========================================================================
+   Lets Talk Auction — Mio, MI — design tokens
+   Auction Acres on a Saturday sale morning, aged: dark timber trusses over
+   board walls glowing gold under the hanging lamps, barn-red paint, lamp
+   brass, pegboard, and the clerk's paper. Colors were sampled from their own
+   barn photos (public/photos) and brightened to read on screen.
+
+   Timber leads: the hero, dark bands, the footer, solid buttons.
+   Barn red is the auction's call, used sparingly: the bidder card's band, lot
+   numbers, the ledger's margin rule, the chant band, the SOLD stamp.
+   Brass is trim only (frames, rules, nails). It is never text on a light
+   ground (2.4:1); on timber, accents use the lit brass.
+   On timber, every word goes cream.
+   =========================================================================== */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Timber: the roof trusses. The lead. */
+  --timber: #3a2a1f;          /* cream on it 10.8:1 */
+  --timber-deep: #2a1e16;     /* footer, hovers */
+
+  /* Barn red: the paint, and the auctioneer's call. The pop. */
+  --barn-red: #8f2d20;        /* 7.1:1 on paper, cream on it 7.1:1 */
+  --barn-red-deep: #742418;   /* hovers */
+
+  /* Lamp brass: frames, rules and nails. Never text on light. */
+  --brass: #b98b3e;
+  --brass-lit: #d2a85c;       /* brass accents on timber, 6.2:1 */
+
+  /* The walls, lit and unlit, and the clerk's paper. */
+  --lit-wall: #efe3c6;        /* page ground */
+  --paper: #f7eeda;           /* cards, the header */
+  --ledger: #fffdf6;          /* the clerk's ledger sheet */
+  --pegboard: #e2c88c;        /* the lamplit pegboard wall (lots hang here) */
+  --peg-hole: rgba(92, 62, 22, 0.28);
+
+  /* Ink. */
+  --rafter: #231912;          /* text, 13.5:1 on the lit wall */
+  --weathered: #6b5844;       /* secondary text, 5.3:1 on the lit wall */
+  --rule: #d6c4a0;            /* hairlines between ledger rows, card edges */
+
+  --background: var(--lit-wall);
+  --foreground: var(--rafter);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-timber: var(--timber);
+  --color-timber-deep: var(--timber-deep);
+  --color-barn-red: var(--barn-red);
+  --color-barn-red-deep: var(--barn-red-deep);
+  --color-brass: var(--brass);
+  --color-brass-lit: var(--brass-lit);
+  --color-lit-wall: var(--lit-wall);
+  --color-paper: var(--paper);
+  --color-ledger: var(--ledger);
+  --color-pegboard: var(--pegboard);
+  --color-rafter: var(--rafter);
+  --color-weathered: var(--weathered);
+  --color-rule: var(--rule);
+
+  /* next/font variables, wired up in layout.tsx */
+  --font-display: var(--font-young-serif);   /* headlines, the wordmark */
+  --font-label: var(--font-schibsted);       /* headings + letterspaced labels */
+  --font-hand: var(--font-covered-by-grace); /* the call: "Talk", the chant. Sparingly. */
+  --font-body: var(--font-nunito-sans);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Tailwind v4 drops the pointer cursor on buttons; put it back everywhere
+   something is clickable. */
+button:not(:disabled),
+[role="button"],
+summary,
+label[for],
+select {
+  cursor: pointer;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--lit-wall);
+  color: var(--rafter);
+  font-family: var(--font-nunito-sans), ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-young-serif), Georgia, serif;
+  font-weight: 400;
+  line-height: 1.05;
+}
+
+/* iOS zooms into inputs under 16px. */
+input,
+select,
+textarea {
+  font-size: max(16px, 1rem);
+}
+
+/* ---- Shared pieces ------------------------------------------------------- */
+
+.container-x {
+  width: 100%;
+  max-width: 76rem;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+}
+@media (min-width: 768px) {
+  .container-x {
+    padding-inline: 2rem;
+  }
+}
+
+/* Letterspaced small caps: labels, nav, buttons. */
+.label {
+  font-family: var(--font-schibsted), ui-sans-serif, sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.75rem;
+  line-height: 1.3;
+}
+
+/* Buttons: square-shouldered, like a painted sign. */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.35rem;
+  border-radius: 2px;
+  transition: background-color 150ms, color 150ms, border-color 150ms;
+}
+.btn-cream {
+  background: var(--lit-wall);
+  color: var(--timber);
+}
+.btn-cream:hover {
+  background: var(--paper);
+}
+.btn-outline-cream {
+  border: 1px solid var(--lit-wall);
+  color: var(--lit-wall);
+  padding: calc(0.85rem - 1px) calc(1.35rem - 1px);
+}
+.btn-outline-cream:hover {
+  background: rgba(239, 227, 198, 0.1);
+}
+.btn-timber {
+  background: var(--timber);
+  color: var(--lit-wall);
+}
+.btn-timber:hover {
+  background: var(--timber-deep);
+}
+.btn-red {
+  background: var(--barn-red);
+  color: var(--lit-wall);
+}
+.btn-red:hover {
+  background: var(--barn-red-deep);
+}
+.btn:focus-visible,
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 3px;
+}
+
+/* The double rule under the header and over the footer. */
+.double-rule {
+  border-bottom: 4px double var(--rafter);
+}
+
+/* Nail heads: on the painted boards and the nailed-up print. */
+.nail {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 9999px;
+  background: var(--brass-lit);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25);
+}
+
+/* The barn wall: wide, quiet board-and-batten. Only ever behind objects,
+   never behind text. */
+.barn-wall {
+  background-color: var(--timber);
+  background-image: repeating-linear-gradient(
+    90deg,
+    transparent 0 104px,
+    rgba(0, 0, 0, 0.2) 104px 105px,
+    rgba(255, 255, 255, 0.035) 105px 113px,
+    rgba(0, 0, 0, 0.2) 113px 114px,
+    transparent 114px 218px
+  );
+}
+
+/* The lamplit pegboard wall the lots hang on. */
+.pegboard {
+  background-color: var(--pegboard);
+  background-image: radial-gradient(circle, var(--peg-hole) 1.7px, transparent 2.1px);
+  background-size: 18px 18px;
+}
+
+/* Painted-board section label. */
+.painted-board {
+  position: relative;
+  display: inline-block;
+  background: var(--timber);
+  color: var(--lit-wall);
+  padding: 0.7rem 1.75rem;
+  outline: 1px solid var(--brass-lit);
+  outline-offset: -4px;
+}
+
+/* ---- Motion -------------------------------------------------------------- */
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.fade-in-up {
+  animation: fade-in-up 320ms ease-out both;
+}
+
+@keyframes lightbox-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.lightbox-in {
+  animation: lightbox-in 180ms ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

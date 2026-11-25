@@ -1,0 +1,167 @@
+{
+  "_note": "DEMO data, shaped like the GoToAuction feed their WordPress site embeds (title, date, time, location, photo count, thumbnail, gallery). Sale titles and dates are real (their 2026 sales on EstateSale.com). DEMO: photo counts (except Dec 5's 625), cover photos, lot numbers and the lots chosen for each sale are mocked from their Facebook photos.",
+  "sales": [
+    {
+      "slug": "combined-estates-sportsman-dec-5",
+      "title": "Combined Estates and Sportsman",
+      "date": "2026-12-05",
+      "doors": "08:30",
+      "start": "10:00",
+      "location": "Auction Acres, Mio",
+      "photoCount": 625,
+      "cover": "/photos/barn-crowd-from-stage.webp",
+      "coverAlt": "A packed crowd fills the Auction Acres barn, seen from the auction stage",
+      "lots": [
+        { "lot": 14, "name": "Vintage jukebox", "photo": "/photos/item-jukebox.webp", "alt": "A vintage jukebox with a cream top and chrome trim" },
+        { "lot": 37, "name": "Hanging parlor lamps", "photo": "/photos/item-hanging-lamps.webp", "alt": "Two hanging parlor lamps with red glass shades and crystal prisms" },
+        { "lot": 52, "name": "Log-frame rocker", "photo": "/photos/item-log-rocker.webp", "alt": "A log-frame rocking chair with a cushioned seat" },
+        { "lot": 88, "name": "Vintage fishing lures", "photo": "/photos/item-fishing-lures.webp", "alt": "Dozens of vintage fishing lures hung in a net on pegboard" }
+      ],
+      "gallery": [
+        { "section": "To Include", "lot": 14, "name": "Vintage jukebox", "photo": "/photos/item-jukebox.webp", "alt": "A vintage jukebox with a cream top and chrome trim" },
+        { "section": "To Include", "lot": 37, "name": "Hanging parlor lamps", "photo": "/photos/item-hanging-lamps.webp", "alt": "Two hanging parlor lamps with red glass shades and crystal prisms" },
+        { "section": "To Include", "lot": 41, "name": "Upright piano and bench", "photo": "/photos/item-piano.webp", "alt": "A wooden upright piano with its matching bench" },
+        { "section": "To Include", "lot": 46, "name": "Vanity with mirror and bench", "photo": "/photos/item-vanity.webp", "alt": "A wooden vanity with an attached mirror and a matching bench" },
+        { "section": "To Include", "lot": 52, "name": "Log-frame rocker", "photo": "/photos/item-log-rocker.webp", "alt": "A log-frame rocking chair with a cushioned seat" },
+        { "section": "To Include", "lot": 60, "name": "Log dining table and chairs", "photo": "/photos/item-log-dining-set.webp", "alt": "A round log dining table with matching log chairs" },
+        { "section": "Sportsman", "lot": 88, "name": "Vintage fishing lures", "photo": "/photos/item-fishing-lures.webp", "alt": "Dozens of vintage fishing lures hung in a net on pegboard" },
+        { "section": "Sportsman", "lot": 93, "name": "Fixed-blade knives with sheaths", "photo": "/photos/item-knives.webp", "alt": "Several fixed-blade knives and a machete with leather sheaths" },
+        { "section": "Sportsman", "lot": 104, "name": "Canvasback decoys", "photo": "/photos/outdoor-decoy-tables.webp", "alt": "Rows of canvasback duck decoys laid out on a table outdoors" },
+        { "section": "Sportsman", "lot": 112, "name": "Decoys, reels and tackle", "photo": "/photos/preview-tables-sportsman.webp", "alt": "Preview tables in the barn with wooden decoys, fishing reels and knives on striped blankets" }
+      ],
+      "sections": [
+        {
+          "name": "To Include",
+          "items": [
+            "Antique baroque parquetry-top accent table",
+            "Loveseat hide-a-bed sofa",
+            "New rocker recliners and queen mattress sets",
+            "Beer mirrors, signs, framed prints and art",
+            "Vintage glass Christmas ornaments and holiday décor",
+            "Swift Mill Lane No. 14 and Wright coffee mills",
+            "Pfaltzgraff, Corelle and Pyrex",
+            "Coleman lanterns and stove",
+            "Floor-model jeweler's showcases",
+            "Coins and currencies"
+          ]
+        },
+        {
+          "name": "Sportsman",
+          "items": [
+            "Working duck and fish decoys",
+            "Sheath and folding knives",
+            "Moose antlers, whitetail and fish mounts",
+            "1950s wooden-cased fly rods: Cabela's, Orvis, St. Croix",
+            "Reels, tackle boxes and vintage lures",
+            "Snowshoes and a wicker creel",
+            "Bows and crossbows",
+            "RCBS reloader, dies and supplies"
+          ]
+        },
+        {
+          "name": "Shop and Outside",
+          "items": [
+            "Husqvarna 48\" zero-turn mower",
+            "Ingersoll 6018 garden tractor with loader",
+            "2004 Honda 4x4 four-wheeler with winch and plow",
+            "1996 Northwood 14' aluminum boat on trailer",
+            "Grumman 17' canoe on trailer",
+            "Boss 7'6\" snow plow with mount and harness",
+            "Log splitters and Stihl chainsaws",
+            "Craftsman tool chests and mechanics tools",
+            "Polaris and portable generators",
+            "Air compressors and a sandblast cabinet"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "public-sportsman-shop-autos-oct-24",
+      "title": "Public Sportsman, Shop and Autos",
+      "date": "2026-10-24",
+      "doors": "08:30",
+      "start": "10:00",
+      "location": "Auction Acres, Mio",
+      "photoCount": 412,
+      "cover": "/photos/outdoor-crowd-rifle.webp",
+      "lots": []
+    },
+    {
+      "slug": "combined-estates-sep-26",
+      "title": "Combined Estates",
+      "date": "2026-09-26",
+      "doors": "08:30",
+      "start": "10:00",
+      "location": "Auction Acres, Mio",
+      "photoCount": 388,
+      "cover": "/photos/barn-preview-wide.webp",
+      "lots": []
+    },
+    {
+      "slug": "combined-estates-jul-18",
+      "title": "Combined Estates",
+      "date": "2026-07-18",
+      "doors": "08:30",
+      "start": "10:00",
+      "location": "Auction Acres, Mio",
+      "photoCount": 296,
+      "cover": "/photos/item-piano.webp",
+      "lots": []
+    },
+    {
+      "slug": "combined-estates-jun-20",
+      "title": "Combined Estates",
+      "date": "2026-06-20",
+      "doors": "08:30",
+      "start": "10:00",
+      "location": "Auction Acres, Mio",
+      "photoCount": 341,
+      "cover": "/photos/item-log-dining-set.webp",
+      "lots": []
+    },
+    {
+      "slug": "combined-estate-moving-may-16",
+      "title": "Combined Estate and Moving",
+      "date": "2026-05-16",
+      "doors": "08:30",
+      "start": "10:00",
+      "location": "Auction Acres, Mio",
+      "photoCount": 274,
+      "cover": "/photos/item-vanity.webp",
+      "lots": []
+    },
+    {
+      "slug": "combined-estates-sportsman-coins-apr-25",
+      "title": "Combined Estates, Sportsman and Coins",
+      "date": "2026-04-25",
+      "doors": "08:30",
+      "start": "10:00",
+      "location": "Auction Acres, Mio",
+      "photoCount": 452,
+      "cover": "/photos/item-knives.webp",
+      "lots": []
+    },
+    {
+      "slug": "coins-shop-combined-estates-feb-28",
+      "title": "Coins, Shop and Combined Estates",
+      "date": "2026-02-28",
+      "doors": "08:30",
+      "start": "10:00",
+      "location": "Auction Acres, Mio",
+      "photoCount": 318,
+      "cover": "/photos/preview-tables-sportsman.webp",
+      "lots": []
+    },
+    {
+      "slug": "combined-estates-small-sportsman-jan-24",
+      "title": "Combined Estates and Small Sportsman",
+      "date": "2026-01-24",
+      "doors": "08:30",
+      "start": "10:00",
+      "location": "Auction Acres, Mio",
+      "photoCount": 263,
+      "cover": "/photos/item-fishing-lures.webp",
+      "lots": []
+    }
+  ]
+}
