@@ -27,8 +27,10 @@ export const lta = {
     "7 miles north of the traffic light in Mio (M-33/M-72)",
     "2 miles west of the blinking light in Fairview (M-33/M-72)",
   ],
-  mapsHref: "https://www.google.com/maps/search/?api=1&query=1491+N+Perry+Creek+Rd+Mio+MI+48647",
-  mapsEmbed: "https://maps.google.com/maps?q=1491+N+Perry+Creek+Rd,+Mio,+MI+48647&z=13&output=embed",
+  // Business name first so the map pin shows their name ("LETS TALK AUCTION
+  // COMPANY" on Google), never just the street number.
+  mapsHref: "https://www.google.com/maps/search/?api=1&query=Lets+Talk+Auction+Company,+1491+N+Perry+Creek+Rd,+Mio,+MI+48647",
+  mapsEmbed: "https://www.google.com/maps?q=Lets+Talk+Auction+Company,+1491+N+Perry+Creek+Rd,+Mio,+MI+48647&output=embed",
 
   // DEMO: real contact details stay off the demo site until launch.
   phone: "(989) 555-0148", // DEMO
